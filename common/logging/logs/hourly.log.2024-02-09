@@ -1,0 +1,1321 @@
+2024-02-09 15:18:24,873 - ERROR - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\base.py", line 187, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapper_view
+    if test_func(request.user):
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\auth\decorators.py", line 51, in <lambda>
+    lambda u: u.is_authenticated,
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\auth\middleware.py", line 33, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\auth\middleware.py", line 13, in get_user
+    request._cached_user = auth.get_user(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\auth\__init__.py", line 209, in get_user
+    user_id = _get_user_session_key(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\auth\__init__.py", line 62, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\base.py", line 53, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\base.py", line 192, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\db.py", line 42, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\query.py", line 643, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\query.py", line 380, in __len__
+    self._fetch_all()
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\query.py", line 1926, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: django_session
+2024-02-09 15:18:25,032 - ERROR - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\base.py", line 187, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\debug_toolbar\middleware.py", line 69, in __call__
+    panel.generate_stats(request, response)
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\debug_toolbar\panels\request.py", line 64, in generate_stats
+    (k, request.session.get(k)) for k in sorted(request.session.keys())
+                                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\base.py", line 123, in keys
+    return self._session.keys()
+           ^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\base.py", line 192, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\db.py", line 42, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\query.py", line 643, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\query.py", line 380, in __len__
+    self._fetch_all()
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\query.py", line 1926, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: django_session
+2024-02-09 15:20:05,230 - ERROR - Internal Server Error: /rpm-service/
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\base.py", line 187, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\authentication.py", line 127, in authenticate
+    if not user or not user.is_active:
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\auth\middleware.py", line 33, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\auth\middleware.py", line 13, in get_user
+    request._cached_user = auth.get_user(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\auth\__init__.py", line 209, in get_user
+    user_id = _get_user_session_key(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\auth\__init__.py", line 62, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\base.py", line 53, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\base.py", line 192, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\db.py", line 42, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\query.py", line 643, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\query.py", line 380, in __len__
+    self._fetch_all()
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\query.py", line 1926, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: django_session
+2024-02-09 15:20:05,373 - ERROR - Internal Server Error: /rpm-service/
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\base.py", line 187, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\debug_toolbar\middleware.py", line 69, in __call__
+    panel.generate_stats(request, response)
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\debug_toolbar\panels\request.py", line 64, in generate_stats
+    (k, request.session.get(k)) for k in sorted(request.session.keys())
+                                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\base.py", line 123, in keys
+    return self._session.keys()
+           ^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\base.py", line 192, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\db.py", line 42, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\contrib\sessions\backends\db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\query.py", line 643, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\query.py", line 380, in __len__
+    self._fetch_all()
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\query.py", line 1926, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: django_session
+2024-02-09 15:25:06,497 - ERROR - Internal Server Error: /rpm-service/coneectivity/
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\djangorestframework_camel_case\render.py", line 18, in render
+    return super(CamelCaseBrowsableAPIRenderer, self).render(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 723, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 695, in get_context
+    'post_form': self.get_rendered_html_form(data, view, 'POST', request),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 510, in get_rendered_html_form
+    return self.render_form_for_serializer(serializer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 518, in render_form_for_serializer
+    serializer.data,
+    ^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 257, in data
+    self._data = self.get_initial()
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 405, in get_initial
+    for field in self.fields.values()
+                 ^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 1027, in get_fields
+    assert hasattr(self, 'Meta'), (
+AssertionError: Class Connectivityserializer missing "Meta" attribute
+2024-02-09 15:26:21,718 - WARNING - Not Found: /rpm-service/connectivity/
+2024-02-09 15:26:29,744 - ERROR - Internal Server Error: /rpm-service/device/
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\djangorestframework_camel_case\render.py", line 18, in render
+    return super(CamelCaseBrowsableAPIRenderer, self).render(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 723, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 695, in get_context
+    'post_form': self.get_rendered_html_form(data, view, 'POST', request),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 510, in get_rendered_html_form
+    return self.render_form_for_serializer(serializer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 518, in render_form_for_serializer
+    serializer.data,
+    ^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 257, in data
+    self._data = self.get_initial()
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 405, in get_initial
+    for field in self.fields.values()
+                 ^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 1027, in get_fields
+    assert hasattr(self, 'Meta'), (
+AssertionError: Class Deviceserializer missing "Meta" attribute
+2024-02-09 15:27:49,625 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\serializers\deviceserializer.py changed, reloading.
+2024-02-09 15:27:58,370 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\serializers\deviceprovider.py changed, reloading.
+2024-02-09 15:28:04,833 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\serializers\connectivityserializer.py changed, reloading.
+2024-02-09 15:28:09,531 - ERROR - Internal Server Error: /rpm-service/device/
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\djangorestframework_camel_case\render.py", line 18, in render
+    return super(CamelCaseBrowsableAPIRenderer, self).render(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 723, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 695, in get_context
+    'post_form': self.get_rendered_html_form(data, view, 'POST', request),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 510, in get_rendered_html_form
+    return self.render_form_for_serializer(serializer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 518, in render_form_for_serializer
+    serializer.data,
+    ^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 257, in data
+    self._data = self.get_initial()
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 405, in get_initial
+    for field in self.fields.values()
+                 ^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 1051, in get_fields
+    info = model_meta.get_field_info(model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\utils\model_meta.py", line 35, in get_field_info
+    opts = model._meta.concrete_model._meta
+           ^^^^^^^^^^^
+AttributeError: module 'rpm_service.models.Device' has no attribute '_meta'
+2024-02-09 15:28:16,165 - ERROR - Internal Server Error: /rpm-service/device/
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\djangorestframework_camel_case\render.py", line 18, in render
+    return super(CamelCaseBrowsableAPIRenderer, self).render(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 723, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 695, in get_context
+    'post_form': self.get_rendered_html_form(data, view, 'POST', request),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 510, in get_rendered_html_form
+    return self.render_form_for_serializer(serializer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 518, in render_form_for_serializer
+    serializer.data,
+    ^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 257, in data
+    self._data = self.get_initial()
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 405, in get_initial
+    for field in self.fields.values()
+                 ^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 1051, in get_fields
+    info = model_meta.get_field_info(model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\utils\model_meta.py", line 35, in get_field_info
+    opts = model._meta.concrete_model._meta
+           ^^^^^^^^^^^
+AttributeError: module 'rpm_service.models.Device' has no attribute '_meta'
+2024-02-09 15:30:07,024 - WARNING - Not Found: /rpm-service/connectivity/
+2024-02-09 15:30:19,915 - ERROR - Internal Server Error: /rpm-service/deviceprovider/
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\djangorestframework_camel_case\render.py", line 18, in render
+    return super(CamelCaseBrowsableAPIRenderer, self).render(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 723, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 695, in get_context
+    'post_form': self.get_rendered_html_form(data, view, 'POST', request),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 510, in get_rendered_html_form
+    return self.render_form_for_serializer(serializer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 518, in render_form_for_serializer
+    serializer.data,
+    ^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 257, in data
+    self._data = self.get_initial()
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 405, in get_initial
+    for field in self.fields.values()
+                 ^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 1051, in get_fields
+    info = model_meta.get_field_info(model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\utils\model_meta.py", line 35, in get_field_info
+    opts = model._meta.concrete_model._meta
+           ^^^^^^^^^^^
+AttributeError: module 'rpm_service.models.DeviceProvider' has no attribute '_meta'
+2024-02-09 15:31:53,694 - ERROR - Internal Server Error: /playground/
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\views.py", line 96, in get
+    schema = generator.get_schema(request, self.public)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\generators.py", line 276, in get_schema
+    paths, prefix = self.get_paths(endpoints, components, request, public)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\generators.py", line 482, in get_paths
+    operation = self.get_operation(view, path, prefix, method, components, request)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\generators.py", line 524, in get_operation
+    operation = view_inspector.get_operation(operation_keys)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\view.py", line 45, in get_operation
+    responses = self.get_responses()
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\view.py", line 180, in get_responses
+    response_serializers = self.get_response_serializers()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\view.py", line 235, in get_response_serializers
+    responses = self.get_default_responses()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\view.py", line 211, in get_default_responses
+    default_schema = self.serializer_to_schema(default_schema) or ''
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\base.py", line 438, in serializer_to_schema
+    return self.probe_inspectors(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\field.py", line 38, in get_schema
+    return self.probe_field_inspectors(serializer, openapi.Schema, self.use_definitions)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\base.py", line 228, in probe_field_inspectors
+    return self.probe_inspectors(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\field.py", line 129, in field_to_swagger_object
+    actual_schema = definitions.setdefault(ref_name, make_schema_definition)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\openapi.py", line 685, in setdefault
+    ret = maker()
+          ^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\field.py", line 98, in make_schema_definition
+    for property_name, child in serializer.fields.items():
+                                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 1051, in get_fields
+    info = model_meta.get_field_info(model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\utils\model_meta.py", line 35, in get_field_info
+    opts = model._meta.concrete_model._meta
+           ^^^^^^^^^^^
+AttributeError: module 'rpm_service.models.ConnectivityType' has no attribute '_meta'
+2024-02-09 15:35:00,628 - WARNING - Not Found: /playground/admin/
+2024-02-09 15:36:24,931 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:36:39,680 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:36:46,157 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:37:30,621 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:37:37,994 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:39:34,954 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:39:59,407 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:40:05,754 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:40:13,114 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:40:22,548 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:40:29,124 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:40:36,625 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:40:44,651 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:40:49,698 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:40:54,648 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:41:01,925 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:41:06,963 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:41:39,819 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:41:51,536 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:42:01,383 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:42:32,290 - ERROR - Internal Server Error: /rpm-service/device/
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\djangorestframework_camel_case\render.py", line 18, in render
+    return super(CamelCaseBrowsableAPIRenderer, self).render(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 723, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 695, in get_context
+    'post_form': self.get_rendered_html_form(data, view, 'POST', request),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 510, in get_rendered_html_form
+    return self.render_form_for_serializer(serializer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 518, in render_form_for_serializer
+    serializer.data,
+    ^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 257, in data
+    self._data = self.get_initial()
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 405, in get_initial
+    for field in self.fields.values()
+                 ^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 1051, in get_fields
+    info = model_meta.get_field_info(model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\utils\model_meta.py", line 35, in get_field_info
+    opts = model._meta.concrete_model._meta
+           ^^^^^^^^^^^
+AttributeError: module 'rpm_service.models.Device' has no attribute '_meta'
+2024-02-09 15:43:40,126 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\models\Device.py changed, reloading.
+2024-02-09 15:43:52,134 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\models\ConnectivityType.py changed, reloading.
+2024-02-09 15:43:59,274 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\models\DeviceProvider.py changed, reloading.
+2024-02-09 15:44:25,290 - ERROR - Internal Server Error: /rpm-service/device/
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: rpm_service_devicemodel
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\mixins.py", line 40, in list
+    page = self.paginate_queryset(queryset)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\generics.py", line 171, in paginate_queryset
+    return self.paginator.paginate_queryset(queryset, self.request, view=self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\pagination.py", line 204, in paginate_queryset
+    self.page = paginator.page(page_number)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\paginator.py", line 89, in page
+    number = self.validate_number(number)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\paginator.py", line 70, in validate_number
+    if number > self.num_pages:
+                ^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\paginator.py", line 116, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+       ^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\paginator.py", line 110, in count
+    return c()
+           ^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\query.py", line 618, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\sql\query.py", line 616, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\sql\query.py", line 602, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: rpm_service_devicemodel
+2024-02-09 15:46:05,307 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\models\ConnectivityType.py changed, reloading.
+2024-02-09 15:46:12,603 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\models\Device.py changed, reloading.
+2024-02-09 15:46:18,225 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\models\DeviceProvider.py changed, reloading.
+2024-02-09 15:47:24,084 - ERROR - Internal Server Error: /rpm-service/device-provider/
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\djangorestframework_camel_case\render.py", line 18, in render
+    return super(CamelCaseBrowsableAPIRenderer, self).render(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 723, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 695, in get_context
+    'post_form': self.get_rendered_html_form(data, view, 'POST', request),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 510, in get_rendered_html_form
+    return self.render_form_for_serializer(serializer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 518, in render_form_for_serializer
+    serializer.data,
+    ^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 257, in data
+    self._data = self.get_initial()
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 405, in get_initial
+    for field in self.fields.values()
+                 ^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 1051, in get_fields
+    info = model_meta.get_field_info(model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\utils\model_meta.py", line 35, in get_field_info
+    opts = model._meta.concrete_model._meta
+           ^^^^^^^^^^^
+AttributeError: module 'rpm_service.models.DeviceProvider' has no attribute '_meta'
+2024-02-09 15:49:54,365 - WARNING - Not Found: /rpm-service/deviceprovider/
+2024-02-09 15:51:10,147 - WARNING - Not Found: /rpm-service/device_provider/
+2024-02-09 15:51:23,095 - ERROR - Internal Server Error: /rpm-service/connectivity-type/
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\djangorestframework_camel_case\render.py", line 18, in render
+    return super(CamelCaseBrowsableAPIRenderer, self).render(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 723, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 695, in get_context
+    'post_form': self.get_rendered_html_form(data, view, 'POST', request),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 510, in get_rendered_html_form
+    return self.render_form_for_serializer(serializer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 518, in render_form_for_serializer
+    serializer.data,
+    ^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 257, in data
+    self._data = self.get_initial()
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 405, in get_initial
+    for field in self.fields.values()
+                 ^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 1051, in get_fields
+    info = model_meta.get_field_info(model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\utils\model_meta.py", line 35, in get_field_info
+    opts = model._meta.concrete_model._meta
+           ^^^^^^^^^^^
+AttributeError: module 'rpm_service.models.ConnectivityType' has no attribute '_meta'
+2024-02-09 15:54:53,812 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:54:53,850 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:55:05,143 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:55:05,164 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:55:13,526 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:55:13,548 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:55:24,633 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:55:24,636 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\routes.py changed, reloading.
+2024-02-09 15:56:58,407 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\core\__init__.py changed, reloading.
+2024-02-09 15:56:58,464 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\core\__init__.py changed, reloading.
+2024-02-09 15:57:20,461 - ERROR - Internal Server Error: /rpm-service/connectivity-type/
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\djangorestframework_camel_case\render.py", line 18, in render
+    return super(CamelCaseBrowsableAPIRenderer, self).render(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 723, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 695, in get_context
+    'post_form': self.get_rendered_html_form(data, view, 'POST', request),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 510, in get_rendered_html_form
+    return self.render_form_for_serializer(serializer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\renderers.py", line 518, in render_form_for_serializer
+    serializer.data,
+    ^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 257, in data
+    self._data = self.get_initial()
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 405, in get_initial
+    for field in self.fields.values()
+                 ^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 1051, in get_fields
+    info = model_meta.get_field_info(model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\utils\model_meta.py", line 35, in get_field_info
+    opts = model._meta.concrete_model._meta
+           ^^^^^^^^^^^
+AttributeError: module 'rpm_service.models.ConnectivityType' has no attribute '_meta'
+2024-02-09 15:58:31,255 - ERROR - Internal Server Error: /playground/
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\views.py", line 96, in get
+    schema = generator.get_schema(request, self.public)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\generators.py", line 276, in get_schema
+    paths, prefix = self.get_paths(endpoints, components, request, public)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\generators.py", line 482, in get_paths
+    operation = self.get_operation(view, path, prefix, method, components, request)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\generators.py", line 524, in get_operation
+    operation = view_inspector.get_operation(operation_keys)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\view.py", line 45, in get_operation
+    responses = self.get_responses()
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\view.py", line 180, in get_responses
+    response_serializers = self.get_response_serializers()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\view.py", line 235, in get_response_serializers
+    responses = self.get_default_responses()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\view.py", line 211, in get_default_responses
+    default_schema = self.serializer_to_schema(default_schema) or ''
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\base.py", line 438, in serializer_to_schema
+    return self.probe_inspectors(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\field.py", line 38, in get_schema
+    return self.probe_field_inspectors(serializer, openapi.Schema, self.use_definitions)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\base.py", line 228, in probe_field_inspectors
+    return self.probe_inspectors(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\field.py", line 129, in field_to_swagger_object
+    actual_schema = definitions.setdefault(ref_name, make_schema_definition)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\openapi.py", line 685, in setdefault
+    ret = maker()
+          ^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\field.py", line 98, in make_schema_definition
+    for property_name, child in serializer.fields.items():
+                                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 1051, in get_fields
+    info = model_meta.get_field_info(model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\utils\model_meta.py", line 35, in get_field_info
+    opts = model._meta.concrete_model._meta
+           ^^^^^^^^^^^
+AttributeError: module 'rpm_service.models.ConnectivityType' has no attribute '_meta'
+2024-02-09 16:01:29,434 - WARNING - Not Found: /favicon.ico
+2024-02-09 16:01:32,125 - ERROR - Internal Server Error: /playground/
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\views.py", line 96, in get
+    schema = generator.get_schema(request, self.public)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\generators.py", line 276, in get_schema
+    paths, prefix = self.get_paths(endpoints, components, request, public)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\generators.py", line 482, in get_paths
+    operation = self.get_operation(view, path, prefix, method, components, request)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\generators.py", line 524, in get_operation
+    operation = view_inspector.get_operation(operation_keys)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\view.py", line 45, in get_operation
+    responses = self.get_responses()
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\view.py", line 180, in get_responses
+    response_serializers = self.get_response_serializers()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\view.py", line 235, in get_response_serializers
+    responses = self.get_default_responses()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\view.py", line 211, in get_default_responses
+    default_schema = self.serializer_to_schema(default_schema) or ''
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\base.py", line 438, in serializer_to_schema
+    return self.probe_inspectors(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\field.py", line 38, in get_schema
+    return self.probe_field_inspectors(serializer, openapi.Schema, self.use_definitions)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\base.py", line 228, in probe_field_inspectors
+    return self.probe_inspectors(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\field.py", line 129, in field_to_swagger_object
+    actual_schema = definitions.setdefault(ref_name, make_schema_definition)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\openapi.py", line 685, in setdefault
+    ret = maker()
+          ^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\field.py", line 98, in make_schema_definition
+    for property_name, child in serializer.fields.items():
+                                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 1051, in get_fields
+    info = model_meta.get_field_info(model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\utils\model_meta.py", line 35, in get_field_info
+    opts = model._meta.concrete_model._meta
+           ^^^^^^^^^^^
+AttributeError: module 'rpm_service.models.ConnectivityType' has no attribute '_meta'
+2024-02-09 16:07:09,817 - ERROR - Internal Server Error: /playground/
+Traceback (most recent call last):
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\views.py", line 96, in get
+    schema = generator.get_schema(request, self.public)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\generators.py", line 276, in get_schema
+    paths, prefix = self.get_paths(endpoints, components, request, public)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\generators.py", line 482, in get_paths
+    operation = self.get_operation(view, path, prefix, method, components, request)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\generators.py", line 524, in get_operation
+    operation = view_inspector.get_operation(operation_keys)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\view.py", line 45, in get_operation
+    responses = self.get_responses()
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\view.py", line 180, in get_responses
+    response_serializers = self.get_response_serializers()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\view.py", line 235, in get_response_serializers
+    responses = self.get_default_responses()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\view.py", line 211, in get_default_responses
+    default_schema = self.serializer_to_schema(default_schema) or ''
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\base.py", line 438, in serializer_to_schema
+    return self.probe_inspectors(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\field.py", line 38, in get_schema
+    return self.probe_field_inspectors(serializer, openapi.Schema, self.use_definitions)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\base.py", line 228, in probe_field_inspectors
+    return self.probe_inspectors(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\base.py", line 110, in probe_inspectors
+    result = method(obj, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\field.py", line 129, in field_to_swagger_object
+    actual_schema = definitions.setdefault(ref_name, make_schema_definition)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\openapi.py", line 685, in setdefault
+    ret = maker()
+          ^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\drf_yasg\inspectors\field.py", line 98, in make_schema_definition
+    for property_name, child in serializer.fields.items():
+                                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\serializers.py", line 1051, in get_fields
+    info = model_meta.get_field_info(model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC-ADMIN\Desktop\onecare-django\env\Lib\site-packages\rest_framework\utils\model_meta.py", line 35, in get_field_info
+    opts = model._meta.concrete_model._meta
+           ^^^^^^^^^^^
+AttributeError: module 'rpm_service.models.ConnectivityType' has no attribute '_meta'
+2024-02-09 16:08:50,088 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\serializers\connectivityserializer.py changed, reloading.
+2024-02-09 16:08:56,257 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\serializers\connectivityserializer.py changed, reloading.
+2024-02-09 16:11:39,054 - INFO - C:\Users\PC-ADMIN\Desktop\onecare-django\src\rpm_service\serializers\connectivityserializer.py changed, reloading.
+2024-02-09 16:13:20,517 - WARNING - Not Found: /rpm-service/connectivity/
